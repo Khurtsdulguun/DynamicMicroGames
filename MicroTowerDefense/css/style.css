@@ -1,0 +1,24 @@
+/*  Retro Pallete http://www.colourlovers.com/palette/2059076/Bright_retro
+    RED: #F75E50;
+    Yellow: #EAC761;
+    Sand: #E8DF9C;
+    Green: 91C09E;
+    Gray: 7D7769;
+    Black: #383838;
+    
+*/
+
+.class REDBackground{
+    background-color: #F75E50;
+}
+
+.class BLACKBackground{
+    background-color: #383838;
+}
+
+.class SANDBackground{
+    background-color: #E8DF9C;
+}
+
+
+/* END OF COLORS */

@@ -1,16 +1,16 @@
 /*  Retro Pallete http://www.colourlovers.com/palette/2059076/Bright_retro
     RED: #F75E50;
-    Pink: #383838;
     Yellow: #EAC761;
     Sand: #E8DF9C;
     Green: 91C09E;
-    Black: 7D7769;
+    Gray: 7D7769;
+    Black: #383838;
     
 */
 
 
 .obj{
-    color: #7D7769;
+    color: #383838;
     background-color:#F75E50;
     position: absolute;
     width: 12em;

@@ -3,8 +3,8 @@ var MGF = MGF || {};
 MGF.TOKEN_WITH_ACTION = function(){
     MGF.DIV_GAME_OBJECT.call(this);
     this.nextToken = null;
-    this._y = 20;
-    this._x = 0;
+    this._y = '2em';
+    this._x = '0.5em';
     MGF.appendDebugDiv('New TOKEN_WITH_ACTION with id: ' + 
             MGF.OBJECTS_STASH[this.id].id);
             

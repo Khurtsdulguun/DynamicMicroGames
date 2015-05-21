@@ -33,8 +33,8 @@ function test4(){
         
          document.getElementById("GAMEBOARD").innerHTML = getId.getElementsAsHTML();
          
-         document.getElementById(MGF.getIdforHtmlOBject(getId.id)).style.left = 1;
-         document.getElementById(MGF.getIdforHtmlOBject(getId.id)).style.top = 0;
+         
+         document.getElementById(MGF.getIdforHtmlOBject(getId.id)).style.top = '0.2em';
          
     }
 }

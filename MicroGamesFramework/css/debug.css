@@ -1,0 +1,48 @@
+/*  Retro Pallete http://www.colourlovers.com/palette/2059076/Bright_retro
+    RED: #F75E50;
+    Pink: #383838;
+    Yellow: #EAC761;
+    Sand: #E8DF9C;
+    Green: 91C09E;
+    Black: 7D7769;
+    
+*/
+
+
+.obj{
+    color: #7D7769;
+    background-color:#F75E50;
+    position: absolute;
+    width: 12em;
+    top: 10px;
+    left: 40px;
+}
+
+#SANDBOX{
+    clear: both;
+}
+
+#DEBUG{
+    clear: both;
+    color: #E8E8E8 ;
+    background-color: #383838;
+}
+
+/* ****************GAME SPACE**************************** */
+
+#GAMEBOARD{
+    width: 20em;
+    height: 6em;
+    background-color:#E8DF9C;
+    position : relative;
+}
+
+.tile{
+    width: 0.5em;
+    height: 0.5em;
+    background-color: #383838;
+    position: absolute;
+    top: 10px;
+    left: 40px;
+}
+

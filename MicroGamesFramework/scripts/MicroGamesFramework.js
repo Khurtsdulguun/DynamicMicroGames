@@ -19,10 +19,10 @@ MGF.GAME_OBJECT.prototype.destroy = function(){
     MGF.OBJECTS_STASH[this.id] = null;
 }
 
-MGF.GAME_OBJECT.prototype.createHTMLElement = function(tag,classes,body,onClickAction){
-    return '<' + tag +' class="'+classes+'" id="'+MGF.getIdforHtmlOBject(this.id)+'" onClick="'+onClickAction+
-    '" >'+body+'</' + tag +'>';
+MGF.GAME_OBJECT.prototype.createHTMLElement = function(tag,classes,body){
+    return '<' + tag +' class="'+classes+'" id="'+MGF.getIdforHtmlOBject(this.id)+'" onClick="MGF.clickOnObjectFromStash(this.id)" >'+body+'</' + tag +'>';
 }
+
 
 //-------------------DEBUG LOG--------------------------------------------------
 MGF.appendDebugDiv = function(log){
@@ -59,6 +59,13 @@ MGF.getIdforHtmlOBject = function(id){
 MGF.getStashIdfromHtmlObject = function(htmlId){
     return parseInt(htmlId.split('_')[1]);
 }
+
+MGF.clickOnObjectFromStash = function(elementId){
+   MGF.OBJECTS_STASH[MGF.getStashIdfromHtmlObject(elementId)].onClickAction(); 
+};
+
+//------------------------------------------------------------------------------
+
 //------------------------------------------------------------------------------
 function test(){
     var getId = MGF.putInStash('test');

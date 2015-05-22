@@ -2,7 +2,6 @@
 var MGF = MGF || {}
 
 MGF.DEBUG_ENABLED = MGF.DEBUG_ENABLED || true;
-
 MGF.OBJECTS_STASH = MGF.OBJECTS_STASH || {}
 MGF.OBJECTS_STASH_MAXIMUM_SIZE = 100;
 
@@ -20,8 +19,9 @@ MGF.GAME_OBJECT.prototype.destroy = function(){
     MGF.OBJECTS_STASH[this.id] = null;
 }
 
-MGF.GAME_OBJECT.prototype.createHTMLElement = function(tag,classes,id,body){
-    return '<' + tag +' class="'+classes+'" id="'+id+'" >'+body+'</' + tag +'>';
+MGF.GAME_OBJECT.prototype.createHTMLElement = function(tag,classes,body,onClickAction){
+    return '<' + tag +' class="'+classes+'" id="'+MGF.getIdforHtmlOBject(this.id)+'" onClick="'+onClickAction+
+    '" >'+body+'</' + tag +'>';
 }
 
 //-------------------DEBUG LOG--------------------------------------------------
@@ -36,16 +36,13 @@ MGF.appendDebugDiv = function(log){
 MGF.putInStash = function(obj){
     var id = MGF.generateId();
     MGF.OBJECTS_STASH[id] = obj;
-    
     MGF.appendDebugDiv('put object at id = ' + id + " : lenght : "+ MGF.OBJECTS_STASH);
     return id;
-    
 }
 MGF.removeFromStash = function(id){
     MGF.appendDebugDiv('object to remove = ' + id);
     MGF.OBJECTS_STASH[id] = null;
     return id;
-    
 }
 MGF.generateId = function(){
     var id;
@@ -54,8 +51,8 @@ MGF.generateId = function(){
     }
     while(MGF.OBJECTS_STASH[id]!=null)
    return id;
-    
 }
+
 MGF.getIdforHtmlOBject = function(id){
     return 'inStash_'.concat(id);
 }
@@ -63,18 +60,12 @@ MGF.getStashIdfromHtmlObject = function(htmlId){
     return parseInt(htmlId.split('_')[1]);
 }
 //------------------------------------------------------------------------------
-
-
-
-
 function test(){
     var getId = MGF.putInStash('test');
     var testObj = new MGF.GAME_OBJECT();
-    
-    document.getElementById("SANDBOX").innerHTML = testObj.createHTMLElement('div','obj','uni','');
+    document.getElementById("SANDBOX").innerHTML = testObj.createHTMLElement('div','obj','aaa : '+ testObj.id);
     
 }
-
 function test2(id){
     document.getElementById(id).innerHTML = MGF.OBJECTS_STASH[MGF.getStashIdfromHtmlObject(id)];
 }

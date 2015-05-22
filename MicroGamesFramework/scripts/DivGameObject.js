@@ -13,8 +13,10 @@ MGF.DIV_GAME_OBJECT.prototype.constructor = MGF.DIV_GAME_OBJECT;
 MGF.DIV_GAME_OBJECT.prototype.getElementsAsHTML = function(){
     MGF.appendDebugDiv("elementid : " + this.id + " : " + MGF.getIdforHtmlOBject(this.id));
     
-    return '<div class="obj" id="'+ MGF.getIdforHtmlOBject(this.id) 
-        +'" onclick="MGF.DIV_GAME_OBJECT.prototype.onClick(this.id)">DIV_GAME_OBJECT</div>';
+   // return '<div class="obj" id="'+ MGF.getIdforHtmlOBject(this.id) 
+   //     +'" onclick="MGF.DIV_GAME_OBJECT.prototype.onClick(this.id)">DIV_GAME_OBJECT</div>';
+   
+   return this.createHTMLElement('div','obj','DIV_GAME_OBJECT','MGF.DIV_GAME_OBJECT.prototype.onClick(this.id)');
 };
 
 MGF.DIV_GAME_OBJECT.prototype.onClick = function(elementId){

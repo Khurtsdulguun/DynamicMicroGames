@@ -19,12 +19,13 @@
 .SANDBackground{
     background-color: #E8DF9C;
 }
+/* END OF COLORS */
 
 .RoadBlock{
     float: left;
-    width: 4em;
+    width: 4em; /* Total Width is 4.6 */
     height: 4em;
-    border: 2px solid;
+    border: 0.2em solid;
     border-color: #7D7769;
     margin: 0.1em;
     cursor: pointer;
@@ -33,10 +34,25 @@
     line-height:4em;
 }
 
+.RoadToken{
+    width: 4em;
+    height: 4em;
+    border: 0.2em solid;
+    background-color: #91C09E;
+    border-color: #7D7769;
+    margin: 0.1em;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    line-height:4em;
+    position: absolute;
+    left : 9.2em;
+}
+
+
 #ROAD{
-    height: 4.5em;
+    height: 4.6em;
     background-color:#E8DF9C;
     position : relative;
 }
 
-/* END OF COLORS */

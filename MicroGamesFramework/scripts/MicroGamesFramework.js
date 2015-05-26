@@ -3,7 +3,7 @@ var MGF = MGF || {}
 
 MGF.DEBUG_ENABLED = MGF.DEBUG_ENABLED || true;
 MGF.OBJECTS_STASH = MGF.OBJECTS_STASH || {}
-MGF.OBJECTS_STASH_MAXIMUM_SIZE = 100;
+MGF.OBJECTS_STASH_MAXIMUM_SIZE = 300;
 
 //-------------------GAME_OBJECT PROTOTYPE--------------------------------------
 MGF.GAME_OBJECT = function(){
@@ -62,6 +62,14 @@ MGF.getStashIdfromHtmlObject = function(htmlId){
 
 MGF.clickOnObjectFromStash = function(elementId){
    MGF.OBJECTS_STASH[MGF.getStashIdfromHtmlObject(elementId)].onClickAction(); 
+};
+
+MGF.getObjectFromStashWithId = function(id){
+    return MGF.OBJECTS_STASH[id];
+};
+
+MGF.getObjectFromStashWithHTMLId = function(elementId){
+    return MGF.OBJECTS_STASH[MGF.getStashIdfromHtmlObject(elementId)];
 };
 
 //------------------------------------------------------------------------------
